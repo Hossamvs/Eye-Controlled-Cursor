@@ -12,7 +12,7 @@ app=wx.App(False)
 #lowerBound = np.array([33,80,40])#hsv values
 #upperBound = np.array([102,255,255])
 lowerBound=np.array([40,80,40])
-upperBound=np.array([65,255,255])
+upperBound=np.array([65,225,255])
 
 cam = cv2.VideoCapture(0)
 cam.set(3,camx)
@@ -60,7 +60,7 @@ while True:
         x,y,w,h=cv2.boundingRect(conts[0])
         if(pinchFlag==0):
             pinchFlag=1
-            mouse.press(Button.left)
+            #mouse.press(Button.left)
         cv2.rectangle(image,(int(x),int(y)),(int(x+w),int(y+h)),(255,0,0),2)
         cx=x+w/2
         cy=y+h/2
